@@ -16,13 +16,13 @@ import Robot.*;
  */
 
 public class Puerta implements iLugarDelMapa {
-private Room habitacion1;
+//private Room habitacion1;
 private Room habitacion2;
 
 
-public Puerta(Room hab1, Room hab2)
+public Puerta(/*Room hab1,*/ Room hab2)
     {
-        habitacion1 = hab1;
+        //habitacion1 = hab1;
         habitacion2 = hab2;
       
     }
