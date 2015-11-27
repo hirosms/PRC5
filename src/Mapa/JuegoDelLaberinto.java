@@ -19,10 +19,17 @@ public class JuegoDelLaberinto {
     {
         return new Laberinto();
     }
+    
     public Room fabricarRoom(int n, boolean e) 
     {
         return new Room(n,e);
     }
+      
+    public Room fabricarRoom(int n, boolean e, boolean c) 
+    {
+        return new Room(n,e,c);
+    }
+    
     
     public Pared fabricarPared() 
     {
@@ -244,6 +251,81 @@ public class JuegoDelLaberinto {
         h12.setLado(Direccion.SUR, fabricarPared());
         h12.setLado(Direccion.ESTE, fabricarPared());
         h12.setLado(Direccion.OESTE, fabricarPared());
+        
+        return unLaberinto;
+        
+    }
+    
+    public final Laberinto crearLaberintoTest()
+    {
+        Laberinto unLaberinto = fabricarLaberinto();
+        
+        Room h1 = fabricarRoom(1,false,false);
+        Room h2 = fabricarRoom(2,false,false);
+        Room h3 = fabricarRoom(3,false,false);      
+        Room h4 = fabricarRoom(4,false,false);
+        Room h5 = fabricarRoom(5,false,false);
+        Room h6 = fabricarRoom(6,false,false);
+        Room h7 = fabricarRoom(7,false,false);
+        Room h8 = fabricarRoom(8,false,true);
+        
+        unLaberinto.addRoom(h1);
+        unLaberinto.addRoom(h2);
+        unLaberinto.addRoom(h3);
+        unLaberinto.addRoom(h4);
+        unLaberinto.addRoom(h5);
+        unLaberinto.addRoom(h6);
+        unLaberinto.addRoom(h7);
+        unLaberinto.addRoom(h8);
+        
+        Puerta puerta1 = fabricarPuerta(h1);
+        Puerta puerta2 = fabricarPuerta(h2);
+        Puerta puerta3 = fabricarPuerta(h3);
+        Puerta puerta4 = fabricarPuerta(h4);
+        Puerta puerta5 = fabricarPuerta(h5);
+        Puerta puerta6 = fabricarPuerta(h6);
+        Puerta puerta7 = fabricarPuerta(h7);
+        Puerta puerta8 = fabricarPuerta(h8);
+        
+        h1.setLado(Direccion.NORTE, fabricarPared());
+        h1.setLado(Direccion.SUR,   fabricarPared());
+        h1.setLado(Direccion.ESTE,  puerta2);
+        h1.setLado(Direccion.OESTE, fabricarPared());
+        
+        h2.setLado(Direccion.NORTE, fabricarPared());
+        h2.setLado(Direccion.SUR,   fabricarPared());
+        h2.setLado(Direccion.ESTE,  puerta3);
+        h2.setLado(Direccion.OESTE, puerta1);
+        
+        h3.setLado(Direccion.NORTE, fabricarPared());
+        h3.setLado(Direccion.SUR, puerta4);
+        h3.setLado(Direccion.ESTE, fabricarPared());
+        h3.setLado(Direccion.OESTE, puerta2);
+        
+        h4.setLado(Direccion.NORTE, puerta3);
+        h4.setLado(Direccion.SUR, puerta5);
+        h4.setLado(Direccion.ESTE, fabricarPared());
+        h4.setLado(Direccion.OESTE, fabricarPared());
+        
+        h5.setLado(Direccion.NORTE, puerta4);
+        h5.setLado(Direccion.SUR, fabricarPared());
+        h5.setLado(Direccion.ESTE, fabricarPared());
+        h5.setLado(Direccion.OESTE, puerta6);
+        
+        h6.setLado(Direccion.NORTE, fabricarPared());
+        h6.setLado(Direccion.SUR, fabricarPared());
+        h6.setLado(Direccion.ESTE, puerta5);
+        h6.setLado(Direccion.OESTE, puerta7);
+        
+        h7.setLado(Direccion.NORTE, puerta8);
+        h7.setLado(Direccion.SUR, fabricarPared());
+        h7.setLado(Direccion.ESTE, puerta6);
+        h7.setLado(Direccion.OESTE, fabricarPared());
+        
+        h8.setLado(Direccion.NORTE, fabricarPared());
+        h8.setLado(Direccion.SUR, puerta7);
+        h8.setLado(Direccion.ESTE, fabricarPared());
+        h8.setLado(Direccion.OESTE, fabricarPared());
         
         return unLaberinto;
         

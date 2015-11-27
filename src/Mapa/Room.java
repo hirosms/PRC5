@@ -19,6 +19,7 @@ public class Room implements iLugarDelMapa{
     public static final int NUMLADOS = 4;
     private int numeroHabitacion;
     private boolean is_end;
+    private boolean is_crazy;
 //    private boolean can_exit;
     
     private final iLugarDelMapa lados[] = new iLugarDelMapa[NUMLADOS];
@@ -27,13 +28,26 @@ public class Room implements iLugarDelMapa{
     {
             numeroHabitacion = numHabitacion;
             is_end = end;
+            is_crazy = false;
+            //can_exit = exit;
+    }
+    
+        public Room(int numHabitacion, boolean end, boolean crazy) 
+    {
+            numeroHabitacion = numHabitacion;
+            is_end = end;
+            is_crazy = crazy;
             //can_exit = exit;
     }
 
 //    public boolean isCan_exit() {
 //        return can_exit;
 //    }
-
+        
+    public boolean isIS_Crazy() {
+        return is_crazy;
+    }   
+    
     public boolean isIs_end() {
         return is_end;
     }

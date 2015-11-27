@@ -81,19 +81,62 @@ public class Robot {
         System.out.println("");
         if (! winStatus())
         {
-            System.out.println("Seleccione hacia donde desea mover ");
-            System.out.println("1. Norte");
-            System.out.println("2. Sur");
-            System.out.println("3. Este");
-            System.out.println("4. Oeste");
-            Scanner in = new Scanner(System.in);
-            int a = in.nextInt();
-            a--;
-            iLugarDelMapa lado = room.getLado(a);
-            lado.Entrar(this);
+            if (!IAmCrazy())
+            {
+                this.comportamiento.respuesta();
+                System.out.println(this.comportamiento.getComportamiento());
+                System.out.println("Seleccione hacia donde desea mover ");
+                System.out.println("1. Norte");
+                System.out.println("2. Sur");
+                System.out.println("3. Este");
+                System.out.println("4. Oeste");
+                Scanner in = new Scanner(System.in);
+                int a = in.nextInt();
+                a--;
+                iLugarDelMapa lado = room.getLado(a);
+                lado.Entrar(this);
+            }
+            else //if (IAmCrazy() == true)
+            {
+                this.setComportamiento(new CrazyBehaviour());
+                this.comportamiento.respuesta();
+                System.out.println(this.comportamiento.getComportamiento());
+                System.out.println("Seleccione hacia donde desea mover ");
+                System.out.println("1. Norte");
+                System.out.println("2. Sur");
+                System.out.println("3. Este");
+                System.out.println("4. Oeste");
+                Scanner in = new Scanner(System.in);
+                int a = in.nextInt();
+                a--;
+                switch(a){
+                    case 0: 
+                        a = 1;
+                        break;
+                    case 1: 
+                        a = 0;
+                        break;
+                    case 2: 
+                        a = 3;
+                        break;
+                    case 3: 
+                        a = 2;
+                        break;
+                }
+                iLugarDelMapa lado = room.getLado(a);
+                lado.Entrar(this);
+            }
 
         }
         
+    }
+    
+    public boolean IAmCrazy ()
+    {
+        if( this.room.isIS_Crazy() == true)
+            return true;
+        else
+            return false;
     }
 
     public void setComportamiento(iBehaviour comportamiento) {

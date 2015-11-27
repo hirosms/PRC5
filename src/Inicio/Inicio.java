@@ -15,30 +15,6 @@ import java.util.Scanner;
  */
 public class Inicio {
     
-    
-    public Laberinto Crear_Juego()
-    {
-        JuegoDelLaberinto tmp = new JuegoDelLaberinto();
-        Laberinto lab = new Laberinto();
-        
-        System.out.println("Seleccione hacia donde desea mover ");
-            System.out.println("1. Cargar Laberinto Fácil");
-            System.out.println("2. Cargar Laberinto Medio");
-            System.out.println("3. Cargar Laberinto Difícil");
-            Scanner in = new Scanner(System.in);
-            int a = in.nextInt();
-            
-            switch (a)
-            {
-                case 1:
-                    lab = tmp.crearLaberintoFacil();
-                case 2:
-                    lab = tmp.crearLaberintoMedio();   
-                case 3:
-                    lab = tmp.crearLaberintoDificil();
-            }
-        return lab;    
-    }
     public static void main(String a[])
     {
         JuegoDelLaberinto main = new JuegoDelLaberinto();
@@ -48,6 +24,7 @@ public class Inicio {
         System.out.println("1. Cargar Laberinto Fácil");
         System.out.println("2. Cargar Laberinto Medio");
         System.out.println("3. Cargar Laberinto Difícil");
+        System.out.println("4. Cargar Laberinto Test");
         Scanner in = new Scanner(System.in);
         int opc = in.nextInt();
         
@@ -59,6 +36,8 @@ public class Inicio {
                     lab = main.crearLaberintoMedio();   
                 case 3:
                     lab = main.crearLaberintoDificil();
+                case 4:
+                    lab = main.crearLaberintoTest();
             }
                 
         boolean win = false;

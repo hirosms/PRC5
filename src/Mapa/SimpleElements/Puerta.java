@@ -20,12 +20,13 @@ public class Puerta implements iLugarDelMapa {
 private Room habitacion2;
 
 
-public Puerta(/*Room hab1,*/ Room hab2)
+public Puerta( Room hab2)
     {
         //habitacion1 = hab1;
         habitacion2 = hab2;
       
     }
+
     @Override
     public void Entrar(Robot robot) 
     {
