@@ -9,17 +9,15 @@ package Personaje;
 import Mapa.Interfaces.iLugarDelMapa;
 import Mapa.Room;
 import java.util.Scanner;
-import javax.swing.ImageIcon;
 
 /**
  * 
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Sergio
  */
 public class Robot {
     
     iBehaviour comportamiento;
     Room room;
-    final int hpmax=10;
     
     public Robot(){}
     
@@ -83,6 +81,8 @@ public class Robot {
         {
             if (!IAmCrazy())
             {
+                if (this.comportamiento.getClass() != NormalBehaviour.class)
+                    this.setComportamiento(new NormalBehaviour());
                 this.comportamiento.respuesta();
                 System.out.println(this.comportamiento.getComportamiento());
                 System.out.println("Seleccione hacia donde desea mover ");

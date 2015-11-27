@@ -7,7 +7,6 @@ package Mapa.SimpleElements;
 
 import Mapa.Interfaces.iLugarDelMapa;
 import Personaje.Robot;
-import RObot.*;
 /**
  *
  * @author Sergio

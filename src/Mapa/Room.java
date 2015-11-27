@@ -6,8 +6,7 @@
 package Mapa;
 
 import Personaje.Robot;
-import Mapa.SimpleElements.Direccion;
-import Mapa.SimpleElements.Pared;
+import Mapa.SimpleElements.*;
 import Mapa.Interfaces.iLugarDelMapa;
 
 /**

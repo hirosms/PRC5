@@ -5,9 +5,7 @@
  */
 package Mapa;
 
-import Mapa.SimpleElements.Direccion;
-import Mapa.SimpleElements.Puerta;
-import Mapa.SimpleElements.Pared;
+import Mapa.SimpleElements.*;
 
 /**
  *
@@ -261,7 +259,7 @@ public class JuegoDelLaberinto {
         Laberinto unLaberinto = fabricarLaberinto();
         
         Room h1 = fabricarRoom(1,false,false);
-        Room h2 = fabricarRoom(2,false,false);
+        Room h2 = fabricarRoom(2,false,true);
         Room h3 = fabricarRoom(3,false,false);      
         Room h4 = fabricarRoom(4,false,false);
         Room h5 = fabricarRoom(5,false,false);

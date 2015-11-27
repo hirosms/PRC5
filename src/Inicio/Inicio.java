@@ -5,7 +5,6 @@
  */
 package Inicio;
 import Mapa.*;
-import Personaje.Robot;
 import Personaje.*;
 import java.util.Scanner;
 
@@ -41,8 +40,8 @@ public class Inicio {
             }
                 
         boolean win = false;
-        boolean lost = false;
         Robot r1 = new Robot(lab.getInicial());
+        
         while (!win)
         {
            if ((r1.getComp().getClass() != Personaje.LostBehaviour.class))

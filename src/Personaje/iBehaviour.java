@@ -5,11 +5,9 @@
  */
 package Personaje;
 
-import javax.swing.ImageIcon;
-
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Sergio
  */
 public interface iBehaviour {
     

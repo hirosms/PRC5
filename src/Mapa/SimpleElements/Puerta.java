@@ -8,7 +8,6 @@ package Mapa.SimpleElements;
 import Mapa.Interfaces.iLugarDelMapa;
 import Mapa.Room;
 import Personaje.Robot;
-import Robot.*;
 
 /**
  *
